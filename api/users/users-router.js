@@ -71,7 +71,7 @@ router.post("/login", async (req, res, next) => {
 })
 
 //logout
-router.delete("/", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
     try{
         //This will delete our session in db and expire the cookie in db
         //client side would have the decision to whether they'll delete the cookie or not
