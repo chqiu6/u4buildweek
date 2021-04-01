@@ -4,10 +4,9 @@ exports.seed = function(knex) {
   // return knex('table_name').del()
   //   .then(function () {
       // Inserts seed entries
-      return knex('seller').insert([
-        {user_id: 1, items_id: 1},
-        {user_id: 2, items_id: 2},
-        {user_id: 3, items_id: 3}
+      return knex('roles').insert([
+        {role_id: 1, role_name: 'user'},
+        {role_id: 2, role_name: 'owner'}
       ]);
     // });
 };
