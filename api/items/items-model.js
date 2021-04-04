@@ -3,6 +3,7 @@ const db = require("../data/db-config");
 //get all items
 function findItems(){
     return db("items")
+    .select("*")
 }
 
 //get by id 

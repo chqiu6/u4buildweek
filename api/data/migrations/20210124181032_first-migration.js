@@ -17,7 +17,7 @@ exports.up = async (knex) => {
       .references('role_id')
       .inTable('roles')
       .onDelete("RESTRICT")
-      .onUpdate("RESTRICT")
+      .onUpdate("CASCADE")
       // users.string('user_email', 320).notNullable()
       // users.timestamps(false, true)
     })

@@ -1,10 +1,29 @@
 # Build Week Scaffolding for Node and PostgreSQL
+URL : https://u4buildweek-marketplace.herokuapp.com/
 
-## Video Tutorial
+(When using the register route role_id is defaulted to user role which doesn't have the permission to access certain items route. Check the items table and see whether a owner role is required. Use the listed user to access owner role routes listed down below)
+
+USERS
+| Methods | Endpoints           | Description   | Data                         |Note                             |
+|--------:|---------------------|---------------|------------------------------|---------------------------------|
+|     GET | /api/users          | get all users |                              |                                 |
+|    POST | /api/users/register | register user | {username: "", password: ""} |                                 |
+|    POST | /api/users/login    | login user    | {username: "", password: ""} |use user2 or user3 for owner role|
+
+ITEMS
+| Methods | Endpoints                        | Description                  | Data                                                                                                                         | Note                                                                                                 |
+|---------|----------------------------------|------------------------------|------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| GET     | /api/items                       | get all items                |                                                                                                                              | need token                                                                                           |
+| GET     | /api/items/category/:category_id | get items by category id     | category_id : integer(1-3)                                                                                                   | need token                                                                                           |
+| GET     | /api/items/owner/:owner_id       | get owner items by owner id  | user2 or user3                                                                                                               | need token and owner role, use user2 or user3 from seeds folder, 03-users.js to access this endpoint |
+| POST    | /api/items                       | post add item                | {items_name: "", items_description: "", items_price: integer or decimal , items_location : "", category_id: integer(1 to 3)} | need token and owner role                                                                            |
+| PUT     | /api/items/:items_id             | put update item by item id   | {items_name: "", items_description: "", items_price: integer or decimal , items_location : "", category_id: integer(1 to 3)} | need token and owner role                                                                            |
+| DELETE  | /api/items/:items_id             | delete item by item id       |                                                                                                                              | need token and owner role                                                                            |
+<!-- ## Video Tutorial
 
 The following tutorial explains how to set up this project using PostgreSQL and Heroku.
 
-[![Setting up PostgreSQL for Build Week](https://img.youtube.com/vi/kTO_tf4L23I/maxresdefault.jpg)](https://www.youtube.com/watch?v=kTO_tf4L23I)
+[![Setting up PostgreSQL for Build Week](https://img.youtube.com/vi/kTO_tf4L23I/maxresdefault.jpg)](https://www.youtube.com/watch?v=kTO_tf4L23I) -->
 
 ## Requirements
 
